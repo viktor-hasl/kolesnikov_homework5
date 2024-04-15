@@ -36,6 +36,7 @@ def get_ranges(lst):
     else:
         result.append(f"{start}-{end}")
     return ", ".join(result)
+    # Хорошее рабочее решение
 
 
 # Напсать функцию standardise_phones которая принимает любое
@@ -61,6 +62,7 @@ def standardise_phones(*args):
         # Добавляем стандартизированный номер к результату
         result.append('+375' + num)
     return result
+    # Отличное решение! Регулярки тут в тему, довольно универсальное, есть альтернативное - см ответы
 
 # Создайте декоратор handle_multiples который позволит функции rope_product
 # вернуть лиш один ответ если задано одно число и много ответов списком если
@@ -83,6 +85,7 @@ def handle_multiples(func):
             return lis_num[0]
         return lis_num
     return wrapper
+    # Декоратор окей
 
 # Создайте функцию rope_product, которая берёт позитивный цельный номер,
 # который представляет собой длину верёвки. Длина этой
@@ -109,3 +112,4 @@ def rope_product(n):
         # Вычисляем максимальное произведение для каждого возможного разбиения числа
         mn = max(2 * rope_product(n-2), 3 * rope_product(n-3), 4 * rope_product(n-4))
     return mn
+    # Отличное короткое решение
